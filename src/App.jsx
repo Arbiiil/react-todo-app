@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Todos from './components/Todo' // Lakukan import
+
+
 
 function App() {
   const [todos, setTodos] = useState([
@@ -22,14 +25,22 @@ function App() {
   console.log(todos)
 
   return (
-    <div>
-      <h1>My Todo List</h1>
-      {/* Gunakan method map di sini */}
-      {todos.map((todo) => {
-        return <p key={todo.id}>{todo.title}</p>
-      })}
+    // Menambah CSS
+    <div style={{ textAlign: 'center', padding: '12px' }}>
+      <h1 style={{fontSize: '36px'}}>My Todo List</h1>
+      <Todos todos={todos} />
     </div>
   )
 }
+
+const styles = {
+  container: {
+    textAlign: 'center',
+    padding: '12px',
+  },
+  title: {
+    fontSize: '36px',
+  },
+};
 
 export default App
